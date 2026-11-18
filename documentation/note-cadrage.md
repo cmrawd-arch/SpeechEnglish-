@@ -9,11 +9,11 @@
 | **Nom du projet** | **Speech English** |
 | **Type de projet** | Application web éducative (E-learning / EdTech) |
 | **Axe d'apprentissage** | Grammaire anglaise progressive (3 niveaux) |
-| **Stack technique retenue** | HTML5, CSS3, JavaScript (ES6+), PHP 8.x, MySQL (MariaDB), XAMPP |
-| **Document** | Note de cadrage de projet (Définition préalable au développement) |
-| **Statut du projet** | Phase de cadrage et de conception (Avant-projet) |
+| **Équipe projet** | **Camara Abdal Wadoud** (Chef de projet), **Sahoue Bi Ballou**, **Yeo Issouf**, **Naounou Djati Nathan** |
+| **Stack technique** | HTML5, CSS3, JavaScript (ES6+), PHP 8.x, MySQL (MariaDB), XAMPP |
+| **Statut du projet** | Développement MVP terminé - Phase de livraison |
 | **Version du document** | 1.0 |
-| **Date d'élaboration** | Novembre 2026 |
+| **Date d'élaboration** | 18/11/2026 |
 
 ---
 
@@ -267,7 +267,7 @@ La structure relationnelle envisagée pour le MVP comprend 7 tables principales 
 | **`quiz`** | Rattache une évaluation à une leçon. | `id`, `lecon_id`, `titre`, `description` |
 | **`questions`** | Répertorie les questions de chaque quiz. | `id`, `quiz_id`, `enonce`, `explication`, `ordre` |
 | **`options_reponses`** | Liste les choix possibles pour chaque question. | `id`, `question_id`, `texte_reponse`, `est_correcte` (booléen) |
-| **`tentatives_quiz`** | Enregistre chaque passage de quiz et son score. | `id`, `utilisateur_id`, `quiz_id`, `score_obtenu`, `score_max`, `date_tentative` |
+| **`tentatives_quiz`** | Enregistre chaque passage de quiz et son score détaillé. | `id`, `utilisateur_id`, `quiz_id`, `score_obtenu`, `score_max`, `bonnes_reponses`, `mauvaises_reponses`, `pourcentage`, `date_tentative` |
 
 ---
 
@@ -305,13 +305,13 @@ La structure relationnelle envisagée pour le MVP comprend 7 tables principales 
    * Guide d'installation et de configuration locale sous XAMPP (`README.md`).
 
 ### 11.2 Critères d'acceptation fonctionnels (Définition de Terminé / *DoD*)
-* [ ] Un internaute anonyme peut s'inscrire, et ses identifiants sont stockés de façon chiffrée dans la table `utilisateurs`.
-* [ ] Un utilisateur enregistré peut ouvrir une session, accéder à son tableau de bord et se déconnecter proprement.
-* [ ] L'utilisateur connecté peut sélectionner l'un des trois niveaux (**Easy**, **Basic**, **Hard**) et visualiser la liste des leçons correspondantes.
-* [ ] L'utilisateur peut lire une fiche de cours structurée et lancer le quiz associé.
-* [ ] Le quiz évalue les réponses soumises de manière 100 % automatisée et affiche immédiatement la note obtenue avec le corrigé explicatif.
-* [ ] La tentative, la note et la date sont enregistrées avec succès dans la base de données.
-* [ ] Le tableau de bord reflète fidèlement la progression de l'apprenant et répertorie l'historique complet de ses passages.
+* [x] Un internaute anonyme peut s'inscrire, et ses identifiants sont stockés de façon chiffrée dans la table `utilisateurs`.
+* [x] Un utilisateur enregistré peut ouvrir une session, accéder à son tableau de bord et se déconnecter proprement.
+* [x] L'utilisateur connecté peut sélectionner l'un des trois niveaux (**Easy**, **Basic**, **Hard**) et visualiser la liste des leçons correspondantes.
+* [x] L'utilisateur peut lire une fiche de cours structurée et lancer le quiz associé.
+* [x] Le quiz évalue les réponses soumises de manière 100 % automatisée et affiche immédiatement la note obtenue avec le corrigé explicatif.
+* [x] La tentative, la note, le détail des réponses et la date sont enregistrés avec succès dans la base de données.
+* [x] Le tableau de bord reflète fidèlement la progression de l'apprenant et répertorie l'historique complet de ses passages.
 
 ### 11.3 Indicateurs de qualité technique
 * **Propreté du code :** Absence d'erreurs, de notices ou d'alertes PHP lors de la navigation (`error_reporting(E_ALL)`).

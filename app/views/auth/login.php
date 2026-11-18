@@ -67,11 +67,6 @@
                 </button>
             </form>
 
-            <div class="demo-box" style="margin-top:1.25rem;padding:0.75rem 1rem;background:var(--cream);border-radius:var(--radius-sm);border:1px dashed var(--cream-border);font-size:0.85rem;color:var(--gray-600);text-align:center;">
-                <strong>Compte de test (seed.sql) :</strong><br>
-                <code>ange.kouassi@speech-english.local</code> / <code>password123</code>
-            </div>
-
             <footer class="auth-footer">
                 <p>Pas encore inscrit ? <a href="<?= url('register') ?>" class="auth-link">Créer un compte</a></p>
             </footer>

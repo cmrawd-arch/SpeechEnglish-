@@ -502,27 +502,16 @@ INSERT INTO `propositions_reponses` (`question_id`, `texte_reponse`, `est_correc
 (19, 'is speaking', 0, NOW());
 
 -- -----------------------------------------------------------------------------
--- 6. Utilisateurs de Démonstration (mot de passe "password123")
+-- 6. Utilisateurs de Démonstration (À supprimer pour la production)
 -- -----------------------------------------------------------------------------
-INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `email`, `mot_de_passe`, `date_creation`) VALUES
-(1, 'Kouassi', 'Ange', 'ange.kouassi@speech-english.local', '$2y$10$VPFOZeOpOg0MjLe0VPQViO7Nar.93eW72Hyt2TsIg3mRg7DlqycxG', NOW()),
-(2, 'Touré', 'Amina', 'amina.toure@speech-english.local', '$2y$10$VPFOZeOpOg0MjLe0VPQViO7Nar.93eW72Hyt2TsIg3mRg7DlqycxG', NOW());
+-- Aucun compte par défaut. L'utilisateur doit créer son propre compte.
 
 -- -----------------------------------------------------------------------------
 -- 7. Historique initial des Tentatives
 -- -----------------------------------------------------------------------------
-INSERT INTO `tentatives_quiz` (`utilisateur_id`, `quiz_id`, `score_obtenu`, `score_max`, `bonnes_reponses`, `mauvaises_reponses`, `pourcentage`, `date_tentative`) VALUES
-(1, 1, 3, 3, 3, 0, 100.00, DATE_SUB(NOW(), INTERVAL 2 DAY)),
-(1, 2, 2, 3, 2, 1, 66.67, DATE_SUB(NOW(), INTERVAL 1 DAY)),
-(2, 1, 2, 3, 2, 1, 66.67, DATE_SUB(NOW(), INTERVAL 3 HOUR)),
-(2, 4, 3, 3, 3, 0, 100.00, NOW());
+-- Vide par défaut.
 
 -- -----------------------------------------------------------------------------
 -- 8. Suivi de Progression par Leçon
 -- -----------------------------------------------------------------------------
-INSERT INTO `progression_lecons` (`utilisateur_id`, `lecon_id`, `statut`, `date_derniere_consultation`, `date_completion`) VALUES
-(1, 1, 'termine', DATE_SUB(NOW(), INTERVAL 2 DAY), DATE_SUB(NOW(), INTERVAL 2 DAY)),
-(1, 2, 'termine', DATE_SUB(NOW(), INTERVAL 1 DAY), DATE_SUB(NOW(), INTERVAL 1 DAY)),
-(1, 3, 'en_cours', NOW(), NULL),
-(2, 1, 'termine', DATE_SUB(NOW(), INTERVAL 3 HOUR), DATE_SUB(NOW(), INTERVAL 3 HOUR)),
-(2, 4, 'termine', NOW(), NOW());
+-- Vide par défaut.
