@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Speech English — Exposé Web Design</title>
+  <meta name="description" content="Présentation interactive du projet Speech English : site d'apprentissage de la grammaire anglaise en trois niveaux." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== Barre du haut ===== -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo-mini">SE</div>
+      <strong>Speech English</strong>
+      <span>· Exposé Web Design</span>
+    </div>
+    <div class="top-actions">
+      <button class="tool" id="btn-grid" title="Toutes les diapositives (G)"><i data-icon="grid"></i><span class="label">Sommaire</span></button>
+      <button class="tool" id="btn-notes" title="Notes de l'orateur (N)"><i data-icon="notes"></i><span class="label">Notes</span></button>
+      <button class="tool" id="btn-full" title="Plein écran (F)"><i data-icon="maximize"></i><span class="label">Présenter</span></button>
+    </div>
+  </header>
+
+  <!-- ===== Scène ===== -->
+  <main class="stage" id="stage">
+    <div class="deck" id="deck">
+
+      <!-- 1 · Couverture -->
+      <section class="slide dark" data-title="Speech English">
+        <div class="deco">E</div>
+        <div class="cover" style="height:100%">
+          <div>
+            <div class="logo-se pop">SE</div>
+            <p class="kicker reveal">Exposé Web Design · TD Projet Web · MIAGE 2</p>
+            <h1 class="title-xl reveal">Speech English</h1>
+            <p class="subtitle reveal">Apprendre la grammaire anglaise, étape par étape.</p>
+            <div class="levels reveal">
+              <span class="pill solid-teal">EASY</span>
+              <span class="pill solid-gold">BASIC</span>
+              <span class="pill solid-red">HARD</span>
+            </div>
+            <p class="by reveal">Présenté par <b>Naounou Djati Noël Nathan</b> · [Noms des membres du groupe]</p>
+          </div>
+          <div class="sentence-stack">
+            <div class="sentence reveal"><span class="chrome">Present Simple</span><span class="example">« I study English every day. »</span></div>
+            <div class="sentence reveal"><span class="chrome">Present Perfect</span><span class="example">« I have just finished my homework. »</span></div>
+            <div class="sentence reveal"><span class="chrome">Passive voice</span><span class="example">« The lesson was explained by the teacher. »</span></div>
+          </div>
+        </div>
+        <aside class="speaker-notes" hidden>
+          <p>Bonjour à tous et merci d'être présents aujourd'hui.</p>
+        </aside>
+      </section>
+
+      <!-- 2 · Sommaire -->
+      <section class="slide" data-title="Sommaire">
+        <p class="kicker reveal">Sommaire</p>
+        <h2 class="title reveal">Ce que nous allons voir</h2>
+        <div class="toc">
+          <div>
+            <h4 class="reveal">Partie exposé</h4>
+            <button class="toc-item reveal" data-goto="3"><span class="num">01</span><span class="body">Qu'est-ce que c'est ?</span><i class="arrow" data-icon="chevron-right"></i></button>
+            <button class="toc-item reveal" data-goto="4"><span class="num">02</span><span class="body">Le problème</span><i class="arrow" data-icon="chevron-right"></i></button>
+            <button class="toc-item reveal" data-goto="5"><span class="num">03</span><span class="body">Notre solution</span><i class="arrow" data-icon="chevron-right"></i></button>
+            <button class="toc-item reveal" data-goto="6"><span class="num">04</span><span class="body">Les trois niveaux</span><i class="arrow" data-icon="chevron-right"></i></button>
+            <button class="toc-item reveal" data-goto="10"><span class="num">05</span><span class="body">Public cible &amp; MVP</span><i class="arrow" data-icon="chevron-right"></i></button>
+          </div>
+          <div>
+            <h4 class="reveal">Livrables du TD</h4>
+            <button class="toc-item reveal" data-goto="11"><span class="num">06</span><span class="body">Rôles &amp; planning</span><i class="arrow" data-icon="chevron-right"></i></button>
+            <button class="toc-item reveal" data-goto="12"><span class="num">07</span><span class="body">Parcours d'onboarding</span><i class="arrow" data-icon="chevron-right"></i></button>
+            <button class="toc-item reveal" data-goto="13"><span class="num">08</span><span class="body">Charte graphique</span><i class="arrow" data-icon="chevron-right"></i></button>
+            <button class="toc-item reveal" data-goto="14"><span class="num">09</span><span class="body">Wireframes &amp; maquettes UI</span><i class="arrow" data-icon="chevron-right"></i></button>
+            <button class="toc-item reveal" data-goto="17"><span class="num">10</span><span class="body">Choix techniques &amp; starter kit</span><i class="arrow" data-icon="chevron-right"></i></button>
+          </div>
+        </div>
+        <aside class="speaker-notes" hidden><p>Cliquez sur une partie pour y aller directement.</p></aside>
+      </section>
+
+      <!-- 3 · Qu'est-ce que c'est -->
+      <section class="slide" data-title="Qu'est-ce que c'est ?">
+        <p class="kicker reveal">01 · Qu'est-ce que c'est ?</p>
+        <h2 class="title reveal">Un site interactif de grammaire anglaise</h2>
+        <p class="lead-quote reveal">« Bonjour à tous et merci d'être présents aujourd'hui. Je suis ravi de vous présenter notre projet : un site interactif d'apprentissage de la grammaire anglaise. »</p>
+        <div class="grid-3 mt-l">
+          <div class="card feature reveal"><div class="icon-badge bg-teal"><i data-icon="book"></i></div><h3>Leçons claires</h3></div>
+          <div class="card feature reveal"><div class="icon-badge bg-gold"><i data-icon="pencil"></i></div><h3>Exercices &amp; quiz</h3></div>
+          <div class="card feature reveal"><div class="icon-badge bg-red"><i data-icon="chart"></i></div><h3>Suivi de progression</h3></div>
+        </div>
+        <aside class="speaker-notes" hidden>
+          <p>Bonjour à tous et merci d'être présents aujourd'hui. Je suis ravi de vous présenter notre projet qui est un site interactif d'apprentissage de la grammaire anglaise.</p>
+        </aside>
+      </section>
+
+      <!-- 4 · Problème -->
+      <section class="slide" data-title="Le problème">
+        <p class="kicker reveal">02 · Le problème</p>
+        <h2 class="title reveal">Beaucoup n'osent pas parler anglais</h2>
+        <div class="split grow">
+          <div>
+            <p class="body-lg reveal">La plupart des personnes n'arrivent pas à parler anglais parce qu'elles ne sont pas natives de cette langue, et se disent que l'anglais n'est pas important.</p>
+            <div class="hint reveal mt-m"><i data-icon="message"></i>Non natif · manque de confiance · « pas important »</div>
+          </div>
+          <div class="big-card-navy reveal">
+            <h3>Pourtant…</h3>
+            <p class="body-lg mt-s">L'anglais ouvre de nombreuses opportunités hors de nos pays d'origine.</p>
+            <div class="chips">
+              <span class="chip"><i data-icon="graduation"></i>Études</span>
+              <span class="chip"><i data-icon="briefcase"></i>Emploi</span>
+              <span class="chip"><i data-icon="globe"></i>Voyages</span>
+              <span class="chip"><i data-icon="users"></i>Communication pro</span>
+            </div>
+          </div>
+        </div>
+        <aside class="speaker-notes" hidden>
+          <p>La plupart des personnes n'arrivent pas à parler anglais parce qu'elles ne sont pas natives de cette langue et se disent que l'anglais n'est pas important. Pourtant, l'anglais est une langue qui ouvre plusieurs opportunités hors de nos pays d'origine.</p>
+        </aside>
+      </section>
+
+      <!-- 5 · Solution -->
+      <section class="slide" data-title="Notre solution">
+        <p class="kicker reveal">03 · Notre solution</p>
+        <h2 class="title reveal">Un site pour apprendre à son propre niveau</h2>
+        <p class="body-lg reveal mt-s" style="max-width:1400px">Pour mieux aider tout le monde, nous avons créé un site web qui permet à n'importe qui, selon son niveau, de connaître les bases de l'anglais et de mieux s'exprimer.</p>
+        <div class="grid-3 grow">
+          <div class="card feature reveal"><div class="icon-badge bg-navy"><i data-icon="users"></i></div><h3>Pour tous</h3><p class="body muted">Débutants comme confirmés</p></div>
+          <div class="card feature reveal"><div class="icon-badge bg-teal"><i data-icon="trending"></i></div><h3>Progressif</h3><p class="body muted">Easy → Basic → Hard</p></div>
+          <div class="card feature reveal"><div class="icon-badge bg-red"><i data-icon="message"></i></div><h3>Concret</h3><p class="body muted">Pour mieux s'exprimer au quotidien</p></div>
+        </div>
+        <aside class="speaker-notes" hidden>
+          <p>Pour mieux aider tout le monde, nous avons décidé de créer un site web qui permettra à n'importe qui, selon son niveau, de connaître les bases de l'anglais et de mieux s'exprimer en anglais.</p>
+        </aside>
+      </section>
+
+      <!-- 6 · Trois niveaux -->
+      <section class="slide" data-title="Les trois niveaux">
+        <p class="kicker reveal">04 · Ce que ça permet</p>
+        <h2 class="title reveal">Progresser à travers trois niveaux</h2>
+        <div class="levels-row grow">
+          <button class="level-card easy reveal" data-goto="7">
+            <span class="bignum">1</span>
+            <div class="icon-badge"><i data-icon="play"></i></div>
+            <span class="lv">EASY LEVEL</span>
+            <h3>Les temps simples</h3>
+            <span class="school">Primary</span>
+            <span class="go">Découvrir <i data-icon="chevron-right"></i></span>
+          </button>
+          <i class="flow-arrow reveal" data-icon="chevron-right"></i>
+          <button class="level-card basic reveal" data-goto="8">
+            <span class="bignum">2</span>
+            <div class="icon-badge"><i data-icon="layers"></i></div>
+            <span class="lv">BASIC LEVEL</span>
+            <h3>Perfect &amp; Continuous</h3>
+            <span class="school">College</span>
+            <span class="go">Découvrir <i data-icon="chevron-right"></i></span>
+          </button>
+          <i class="flow-arrow reveal" data-icon="chevron-right"></i>
+          <button class="level-card hard reveal" data-goto="9">
+            <span class="bignum">3</span>
+            <div class="icon-badge"><i data-icon="award"></i></div>
+            <span class="lv">HARD LEVEL</span>
+            <h3>Structures avancées</h3>
+            <span class="school">High school</span>
+            <span class="go">Découvrir <i data-icon="chevron-right"></i></span>
+          </button>
+        </div>
+        <aside class="speaker-notes" hidden>
+          <p>Le site est conçu pour permettre aux apprenants de progresser étape par étape à travers trois niveaux : le Easy level (primary), le Basic level (college) et le Hard level (high school).</p>
+        </aside>
+      </section>
+
+      <!-- 7 · Easy -->
+      <section class="slide" data-title="Niveau Easy">
+        <p class="kicker reveal" style="color:var(--teal)">04 · Niveau Easy · Primary</p>
+        <div class="level-head reveal"><span class="pill solid-teal">EASY</span><h2 class="title">Les temps simples</h2></div>
+        <div class="flip-grid cols-3">
+          <button class="flip reveal">
+            <div class="flip-inner">
+              <div class="flip-face flip-front"><span class="bar bg-teal"></span><span class="tense">Present Simple</span><span class="use">Habitudes et faits</span><span class="tap"><i data-icon="refresh"></i>Cliquer pour l'exemple</span></div>
+              <div class="flip-face flip-back back-teal"><span class="example">« I <mark>study</mark> English every day. »</span><span class="chrome">Present Simple</span></div>
+            </div>
+          </button>
+          <button class="flip reveal">
+            <div class="flip-inner">
+              <div class="flip-face flip-front"><span class="bar bg-teal"></span><span class="tense">Past Simple</span><span class="use">Actions terminées</span><span class="tap"><i data-icon="refresh"></i>Cliquer pour l'exemple</span></div>
+              <div class="flip-face flip-back back-teal"><span class="example">« Yesterday, I <mark>visited</mark> Paris. »</span><span class="chrome">Past Simple</span></div>
+            </div>
+          </button>
+          <button class="flip reveal">
+            <div class="flip-inner">
+              <div class="flip-face flip-front"><span class="bar bg-teal"></span><span class="tense">Future Simple</span><span class="use">Projets et prévisions</span><span class="tap"><i data-icon="refresh"></i>Cliquer pour l'exemple</span></div>
+              <div class="flip-face flip-back back-teal"><span class="example">« Tomorrow, I <mark>will call</mark> you. »</span><span class="chrome">Future Simple</span></div>
+            </div>
+          </button>
+        </div>
+        <div class="bottom-note reveal">
+          <p class="body">Explications claires, exemples concrets, exercices et quiz : on gagne vite en confiance pour la communication quotidienne.</p>
+          <button class="hint" data-flip-all><i data-icon="refresh"></i>Tout retourner</button>
+        </div>
+        <aside class="speaker-notes" hidden>
+          <p>Nous commençons par les bases. Dans le niveau Easy, les apprenants se concentrent sur les temps simples : Present Simple, Past Simple et Future Simple.</p>
+          <p>Le Present Simple pour les habitudes et les faits : « I study English every day. » Le Past Simple pour les actions terminées : « Yesterday, I visited Paris. » Le Future Simple pour les projets et prévisions : « Tomorrow, I will call you. »</p>
+          <p>Des explications claires, des exemples concrets, des exercices et des quiz rendent ces temps essentiels faciles à comprendre et à mémoriser. Ce niveau permet de gagner rapidement en confiance pour la communication quotidienne.</p>
+        </aside>
+      </section>
+
+      <!-- 8 · Basic -->
+      <section class="slide" data-title="Niveau Basic">
+        <p class="kicker reveal" style="color:#c46a2c">04 · Niveau Basic · College</p>
+        <div class="level-head reveal"><span class="pill solid-gold">BASIC</span><h2 class="title">Les temps Perfect et Continuous</h2></div>
+        <div class="flip-grid cols-4">
+          <button class="flip reveal">
+            <div class="flip-inner">
+              <div class="flip-face flip-front"><span class="bar bg-gold"></span><span class="tense">Present Perfect</span><span class="use">Relier passé et présent</span><span class="tap"><i data-icon="refresh"></i>Cliquer</span></div>
+              <div class="flip-face flip-back back-gold"><span class="example">« I <mark>have just finished</mark> my homework. »</span><span class="chrome">Present Perfect</span></div>
+            </div>
+          </button>
+          <button class="flip reveal">
+            <div class="flip-inner">
+              <div class="flip-face flip-front"><span class="bar bg-gold"></span><span class="tense">Past Perfect</span><span class="use">Exprimer l'antériorité</span><span class="tap"><i data-icon="refresh"></i>Cliquer</span></div>
+              <div class="flip-face flip-back back-gold"><span class="example">« She <mark>had left</mark> before I arrived. »</span><span class="chrome">Past Perfect</span></div>
+            </div>
+          </button>
+          <button class="flip reveal">
+            <div class="flip-inner">
+              <div class="flip-face flip-front"><span class="bar bg-gold"></span><span class="tense">Present Continuous</span><span class="use">Action en cours</span><span class="tap"><i data-icon="refresh"></i>Cliquer</span></div>
+              <div class="flip-face flip-back back-gold"><span class="example">« I <mark>am studying</mark> right now. »</span><span class="chrome">Present Continuous</span></div>
+            </div>
+          </button>
+          <button class="flip reveal">
+            <div class="flip-inner">
+              <div class="flip-face flip-front"><span class="bar bg-gold"></span><span class="tense">Past Continuous</span><span class="use">Durée dans le passé</span><span class="tap"><i data-icon="refresh"></i>Cliquer</span></div>
+              <div class="flip-face flip-back back-gold"><span class="example">« I <mark>was watching</mark> TV when you called. »</span><span class="chrome">Past Continuous</span></div>
+            </div>
+          </button>
+        </div>
+        <div class="bottom-note reveal">
+          <p class="body">Leçons interactives et activités pratiques : le moment, l'achèvement ou la continuité d'une action.</p>
+          <button class="hint" data-flip-all><i data-icon="refresh"></i>Tout retourner</button>
+        </div>
+        <aside class="speaker-notes" hidden>
+          <p>Une fois les temps simples maîtrisés, on passe au niveau Basic qui introduit les temps Perfect et les temps Continuous.</p>
+          <p>Le Present Perfect pour relier passé et présent : « I have just finished my homework. » Le Past Perfect pour exprimer l'antériorité : « She had left before I arrived. » Les formes continues pour indiquer la durée : « I am studying right now » (Present Continuous) ou « I was watching TV when you called » (Past Continuous).</p>
+          <p>Des leçons interactives et des activités pratiques aident les apprenants à bien saisir comment ces temps expriment le moment, l'achèvement ou la continuité d'une action.</p>
+        </aside>
+      </section>
+
+      <!-- 9 · Hard -->
+      <section class="slide" data-title="Niveau Hard">
+        <p class="kicker reveal">04 · Niveau Hard · High school</p>
+        <div class="level-head reveal"><span class="pill solid-red">HARD</span><h2 class="title">Des structures avancées</h2></div>
+        <div class="hard-grid grow">
+          <div class="card reveal">
+            <div class="icon-badge bg-red"><i data-icon="zap"></i></div>
+            <h3>Phrasal verbs</h3>
+            <p class="caption">Indispensables pour parler couramment. Cliquez pour traduire :</p>
+            <div class="verb-chips">
+              <button class="verb-chip">give up <span>abandonner</span></button>
+              <button class="verb-chip">look forward to <span>avoir hâte de</span></button>
+              <button class="verb-chip">run into <span>croiser par hasard</span></button>
+            </div>
+          </div>
+          <div class="card reveal">
+            <div class="icon-badge bg-navy"><i data-icon="refresh"></i></div>
+            <h3>Voix active / passive</h3>
+            <div class="voice-toggle">
+              <button class="on" data-voice="active">ACTIVE</button>
+              <button data-voice="passive">PASSIVE</button>
+            </div>
+            <p class="voice-sentence" id="voice-sentence">« <b>The teacher</b> explained the lesson. »</p>
+            <p class="caption" id="voice-caption">Le sujet fait l'action.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon-badge bg-gold"><i data-icon="message"></i></div>
+            <h3>Expressions de dialogue</h3>
+            <ul class="dialogue-list">
+              <li><i data-icon="check"></i>Discours rapporté</li>
+              <li><i data-icon="check"></i>Citations directes</li>
+              <li><i data-icon="check"></i>Phrases naturelles de conversation</li>
+            </ul>
+          </div>
+        </div>
+        <p class="body reveal mt-m">Ce niveau prépare aux situations réelles, à la rédaction avancée et à la communication professionnelle.</p>
+        <aside class="speaker-notes" hidden>
+          <p>Au niveau Hard, on aborde des éléments plus complexes et naturels de l'anglais : les phrasal verbs comme « give up », « look forward to », « run into », indispensables pour parler couramment.</p>
+          <p>La voix active et passive : savoir quand dire « The teacher explained the lesson » ou « The lesson was explained by the teacher ». Les expressions de dialogue, y compris le discours rapporté, les citations directes et les phrases naturelles de conversation.</p>
+          <p>Ce niveau prépare les apprenants aux situations réelles, à la rédaction avancée et à la communication professionnelle.</p>
+        </aside>
+      </section>
+
+      <!-- 10 · Note de cadrage -->
+      <section class="slide" data-title="Note de cadrage">
+        <p class="kicker reveal">05 · Note de cadrage</p>
+        <h2 class="title reveal">Besoin, public cible et MVP</h2>
+        <div class="cadrage grow">
+          <div class="stack">
+            <div class="card reveal">
+              <h3><span class="icon-badge bg-red"><i data-icon="target"></i></span>Le besoin</h3>
+              <p class="body">Apprendre la grammaire anglaise de façon claire, progressive et motivante, sans être natif.</p>
+            </div>
+            <div class="card reveal">
+              <h3><span class="icon-badge bg-teal"><i data-icon="users"></i></span>Le public</h3>
+              <p class="body">Élèves du primaire, du collège et du lycée, débutants ou personnes qui veulent se perfectionner.</p>
+            </div>
+          </div>
+          <div class="card reveal">
+            <h3><span class="icon-badge bg-navy"><i data-icon="layers"></i></span>Fonctionnalités clés (MVP)</h3>
+            <ul class="mvp-list">
+              <li><i data-icon="check-circle"></i>3 parcours : Easy, Basic, Hard</li>
+              <li><i data-icon="check-circle"></i>Leçons avec explications et exemples</li>
+              <li><i data-icon="check-circle"></i>Exercices interactifs</li>
+              <li><i data-icon="check-circle"></i>Quiz avec correction immédiate</li>
+              <li><i data-icon="check-circle"></i>Suivi de progression</li>
+              <li><i data-icon="check-circle"></i>Compte apprenant</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="speaker-notes" hidden>
+          <p>Que vous soyez débutant ou que vous souhaitiez perfectionner vos compétences, cette plateforme rend l'apprentissage de la grammaire efficace et agréable.</p>
+        </aside>
+      </section>
+
+      <!-- 11 · Rôles & planning -->
+      <section class="slide" data-title="Rôles et planning">
+        <p class="kicker reveal">06 · Compte-rendu de kick-off</p>
+        <h2 class="title reveal">Rôles et planning prévisionnel</h2>
+        <div class="timeline">
+          <div class="tl-step reveal"><div class="tl-dot">S1</div><p>Cadrage &amp; kick-off</p></div>
+          <div class="tl-step reveal"><div class="tl-dot">S2</div><p>Conception UX/UI</p></div>
+          <div class="tl-step reveal"><div class="tl-dot">S3</div><p>Starter kit &amp; ADR</p></div>
+          <div class="tl-step reveal"><div class="tl-dot">S4–5</div><p>Développement MVP</p></div>
+          <div class="tl-step reveal"><div class="tl-dot">S6</div><p>Tests &amp; soutenance</p></div>
+        </div>
+        <div class="roles">
+          <div class="card role reveal"><div class="icon-badge bg-navy"><i data-icon="target"></i></div><h4>Chef de projet</h4><div class="who">[Nom membre 1]</div><p>Planning, coordination, soutenance</p></div>
+          <div class="card role reveal"><div class="icon-badge bg-teal"><i data-icon="pencil"></i></div><h4>UX/UI designer</h4><div class="who">[Nom membre 2]</div><p>Wireframes, maquettes, charte</p></div>
+          <div class="card role reveal"><div class="icon-badge bg-gold"><i data-icon="code"></i></div><h4>Dév. front-end</h4><div class="who">[Nom membre 3]</div><p>Pages, leçons, quiz</p></div>
+          <div class="card role reveal"><div class="icon-badge bg-red"><i data-icon="database"></i></div><h4>Dév. back-end</h4><div class="who">[Nom membre 4]</div><p>Base de données, comptes, scores</p></div>
+        </div>
+        <p class="small-note reveal">Semaines indicatives — dates à compléter par le groupe.</p>
+      </section>
+
+      <!-- 12 · Onboarding -->
+      <section class="slide" data-title="Parcours d'onboarding">
+        <p class="kicker reveal">07 · Parcours d'onboarding</p>
+        <h2 class="title reveal">Les premiers pas d'un nouvel apprenant</h2>
+        <div class="steps" id="steps">
+          <span class="fill" id="steps-fill"></span>
+          <button class="step reveal"><div class="circle"><i data-icon="home"></i><span class="n">1</span></div><h4>Accueil</h4><p>Découvre le site et ses 3 niveaux</p></button>
+          <button class="step reveal"><div class="circle"><i data-icon="user-plus"></i><span class="n">2</span></div><h4>Inscription</h4><p>Crée son compte en 1 minute</p></button>
+          <button class="step reveal"><div class="circle"><i data-icon="layers"></i><span class="n">3</span></div><h4>Choix du niveau</h4><p>Easy, Basic ou Hard</p></button>
+          <button class="step reveal"><div class="circle"><i data-icon="book"></i><span class="n">4</span></div><h4>1re leçon</h4><p>Règle + exemples</p></button>
+          <button class="step reveal"><div class="circle"><i data-icon="award"></i><span class="n">5</span></div><h4>1er quiz</h4><p>Score et progression</p></button>
+        </div>
+        <div class="goal-box reveal">
+          <i data-icon="target"></i>
+          <p class="body">Objectif : qu'un nouvel utilisateur termine sa première leçon et son premier quiz en moins de 10 minutes, puis voie sa progression sur son tableau de bord.</p>
+        </div>
+        <aside class="speaker-notes" hidden><p>Cliquez sur chaque étape pour dérouler le parcours.</p></aside>
+      </section>
+
+      <!-- 13 · Charte graphique -->
+      <section class="slide" data-title="Charte graphique">
+        <p class="kicker reveal">08 · Charte graphique</p>
+        <h2 class="title reveal">L'identité visuelle de Speech English</h2>
+        <div class="swatches">
+          <button class="swatch reveal" data-copy="#14213D"><div class="color" style="background:#14213D"><i data-icon="copy"></i></div><div class="meta"><b>Navy</b><code>#14213D</code><small>Titres, fonds</small></div></button>
+          <button class="swatch reveal" data-copy="#E63946"><div class="color" style="background:#E63946"><i data-icon="copy"></i></div><div class="meta"><b>Red</b><code>#E63946</code><small>Accent, Hard</small></div></button>
+          <button class="swatch reveal" data-copy="#2A9D8F"><div class="color" style="background:#2A9D8F"><i data-icon="copy"></i></div><div class="meta"><b>Teal</b><code>#2A9D8F</code><small>Easy, succès</small></div></button>
+          <button class="swatch reveal" data-copy="#F4A261"><div class="color" style="background:#F4A261"><i data-icon="copy"></i></div><div class="meta"><b>Gold</b><code>#F4A261</code><small>Basic, badges</small></div></button>
+          <button class="swatch reveal" data-copy="#F8F5EE"><div class="color" style="background:#F8F5EE;box-shadow:inset 0 -2px 0 #e6e0d2"><i data-icon="copy" style="color:#14213D"></i></div><div class="meta"><b>Cream</b><code>#F8F5EE</code><small>Fond des pages</small></div></button>
+        </div>
+        <div class="charte-bottom">
+          <div class="card reveal">
+            <h4>TYPOGRAPHIE</h4>
+            <div class="type-row"><span class="aa serif">Aa</span><div><span class="name serif">Georgia</span><small>Titres et exemples de phrases</small></div></div>
+            <div class="type-row"><span class="aa">Aa</span><div><span class="name">Calibri</span><small>Textes, boutons et interface</small></div></div>
+          </div>
+          <div class="card reveal">
+            <h4>LOGO &amp; COMPOSANTS</h4>
+            <div class="comp-row">
+              <div class="logo-inline"><div class="logo-se">SE</div><b>Speech English</b></div>
+            </div>
+            <div class="comp-row">
+              <button class="btn-demo primary">Commencer</button>
+              <button class="btn-demo ghost">Voir les leçons</button>
+              <span class="pill solid-teal">EASY</span><span class="pill solid-gold">BASIC</span><span class="pill solid-red">HARD</span>
+            </div>
+          </div>
+        </div>
+        <aside class="speaker-notes" hidden><p>Cliquez sur une couleur pour copier son code. Coins arrondis et ombres douces sur tous les composants.</p></aside>
+      </section>
+
+      <!-- 14 · Wireframes -->
+      <section class="slide" data-title="Wireframes">
+        <p class="kicker reveal">09 · Wireframes basse fidélité</p>
+        <h2 class="title reveal">Les écrans principaux</h2>
+        <div class="wf-grid grow">
+          <div class="wf reveal">
+            <div class="wf-phone">
+              <div class="wf-line s"></div>
+              <div class="wf-box wf-x" style="height:170px"></div>
+              <div class="wf-line m"></div><div class="wf-line"></div><div class="wf-line s"></div>
+              <div class="wf-btn">Bouton</div>
+            </div>
+            <h4>Accueil</h4>
+          </div>
+          <div class="wf reveal">
+            <div class="wf-phone">
+              <div class="wf-line s"></div>
+              <div class="wf-box" style="height:110px">Easy</div>
+              <div class="wf-box" style="height:110px">Basic</div>
+              <div class="wf-box" style="height:110px">Hard</div>
+            </div>
+            <h4>Choix du niveau</h4>
+          </div>
+          <div class="wf reveal">
+            <div class="wf-phone">
+              <div class="wf-line s"></div>
+              <div class="wf-box" style="height:120px">Règle + explication</div>
+              <div class="wf-box" style="height:80px">Exemple</div>
+              <div class="wf-line m"></div>
+              <div class="wf-box" style="height:60px">Champ réponse</div>
+              <div class="wf-btn">Vérifier</div>
+            </div>
+            <h4>Leçon + exercice</h4>
+          </div>
+          <div class="wf reveal">
+            <div class="wf-phone">
+              <div class="wf-line"></div>
+              <div class="wf-box" style="height:90px">Question</div>
+              <div class="wf-row"><div class="wf-box" style="height:64px">Option A</div><div class="wf-box" style="height:64px">Option B</div></div>
+              <div class="wf-row"><div class="wf-box" style="height:64px">Option C</div><div class="wf-box" style="height:64px">Option D</div></div>
+              <div class="wf-btn">Bouton</div>
+            </div>
+            <h4>Quiz &amp; résultat</h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15 · Maquette ordinateur -->
+      <section class="slide" data-title="Maquette ordinateur">
+        <p class="kicker reveal">09 · Maquette UI haute fidélité</p>
+        <h2 class="title reveal">Page d'accueil — version ordinateur</h2>
+        <div class="browser reveal">
+          <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">speech-english.app</span></div>
+          <div class="site-nav">
+            <div class="logo-inline"><div class="logo-se">SE</div><b>Speech English</b></div>
+            <a>Leçons</a><a>Quiz</a><a>Progression</a>
+            <span class="login">Se connecter</span>
+          </div>
+          <div class="site-hero">
+            <div>
+              <span class="pill red">GRAMMAIRE ANGLAISE · 3 NIVEAUX</span>
+              <h2>Master English grammar, step by step.</h2>
+              <p>Des leçons claires, des exercices et des quiz corrigés instantanément.</p>
+              <div class="comp-row"><button class="btn-demo primary">Commencer</button><button class="btn-demo ghost">Voir les leçons</button></div>
+            </div>
+            <div class="lvl-cards">
+              <div class="lvl"><span class="pill solid-teal">EASY</span><b class="serif" style="font-size:26px">Present · Past · Future Simple</b><span class="pct c-teal">72%</span><div class="track"><span class="bg-teal" style="--w:72%"></span></div></div>
+              <div class="lvl"><span class="pill solid-gold">BASIC</span><b class="serif" style="font-size:26px">Perfect &amp; Continuous</b><span class="pct" style="color:#c46a2c">35%</span><div class="track"><span class="bg-gold" style="--w:35%"></span></div></div>
+              <div class="lvl"><span class="pill solid-red">HARD</span><b class="serif" style="font-size:26px">Phrasal verbs · Passive · Dialogue</b><span class="pct c-red">0%</span><div class="track"><span class="bg-red" style="--w:2%"></span></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 16 · Maquette mobile -->
+      <section class="slide" data-title="Maquette mobile">
+        <p class="kicker reveal">09 · Maquette UI haute fidélité</p>
+        <h2 class="title reveal">Leçon et quiz — version mobile</h2>
+        <div class="mobile-layout">
+          <div class="annot left reveal">
+            <div class="annot-item"><h4>Barre de progression <i data-icon="chart"></i></h4><p>L'apprenant voit où il en est dans le quiz.</p></div>
+            <div class="annot-item"><h4>Exercice <i data-icon="pencil"></i></h4><p>La règle, un exemple, puis on pratique tout de suite.</p></div>
+          </div>
+          <div class="phone pop">
+            <div class="phone-screen">
+              <div class="phone-top"><span>‹ Present Simple</span><span class="pill solid-teal">EASY</span></div>
+              <div class="ph-card">
+                <h5>Habitudes &amp; faits</h5>
+                <p>Sujet + verbe (+ s à la 3e personne)</p>
+                <span class="example">« I study English every day. »</span>
+              </div>
+              <div class="ph-card">
+                <h5>Exercice</h5>
+                <p>She ____ (play) tennis.</p>
+                <div class="ph-input"><span>plays</span></div>
+              </div>
+              <button class="ph-btn" style="margin-top:auto">Leçon suivante</button>
+            </div>
+          </div>
+          <div class="phone pop">
+            <div class="phone-screen">
+              <div class="phone-top"><span>Quiz · Easy</span><span class="muted" id="q-count">3 / 10</span></div>
+              <div class="ph-progress"><span id="q-bar"></span></div>
+              <p class="q-text">Yesterday, I ____ Paris.</p>
+              <div class="q-options" id="quiz">
+                <button class="q-opt">A. visit</button>
+                <button class="q-opt" data-correct>B. visited</button>
+                <button class="q-opt">C. will visit</button>
+                <button class="q-opt">D. have visit</button>
+              </div>
+              <p class="q-feedback" id="q-feedback">Touchez une réponse</p>
+              <button class="ph-btn" id="q-next" disabled>Suivant</button>
+            </div>
+          </div>
+          <div class="annot reveal">
+            <div class="annot-item"><h4><i data-icon="check-circle"></i>Correction immédiate</h4><p>La réponse est validée dès que l'élève clique, avec un retour en couleur.</p></div>
+            <div class="annot-item"><h4><i data-icon="smartphone"></i>Un geste par écran</h4><p>Un seul gros bouton en bas, facile à toucher au pouce.</p></div>
+          </div>
+        </div>
+        <aside class="speaker-notes" hidden><p>Démonstration : cliquez sur une réponse du quiz dans le téléphone de droite. La bonne réponse est « visited ».</p></aside>
+      </section>
+
+      <!-- 17 · ADR -->
+      <section class="slide" data-title="Choix techniques (ADR)">
+        <p class="kicker reveal">10 · ADR — Architecture Decision Records</p>
+        <h2 class="title reveal">Nos deux choix techniques</h2>
+        <div class="adr-grid grow">
+          <div class="card adr reveal">
+            <div class="adr-head bg-navy"><div class="icon-badge"><i data-icon="code"></i></div><div><small>ADR-001 · STACK FRONT/BACK</small><h3>React + TanStack Start</h3></div></div>
+            <div class="adr-body">
+              <h4>Pourquoi ?</h4>
+              <ul>
+                <li><i data-icon="check"></i>Composants réutilisables pour leçons et quiz</li>
+                <li><i data-icon="check"></i>Pages rapides, adaptées au mobile</li>
+                <li><i data-icon="check"></i>Front et back dans un seul projet</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card adr reveal">
+            <div class="adr-head bg-teal"><div class="icon-badge"><i data-icon="database"></i></div><div><small>ADR-002 · BASE DE DONNÉES</small><h3>PostgreSQL (Lovable Cloud)</h3></div></div>
+            <div class="adr-body">
+              <h4>Pourquoi ?</h4>
+              <ul>
+                <li><i data-icon="check"></i>Données liées : élèves, niveaux, leçons, scores</li>
+                <li><i data-icon="check"></i>Comptes et connexion intégrés</li>
+                <li><i data-icon="check"></i>Sécurité : chacun ne voit que ses résultats</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="small-note reveal">Proposition de l'équipe — à valider en groupe.</p>
+      </section>
+
+      <!-- 18 · Starter kit -->
+      <section class="slide" data-title="Starter kit">
+        <p class="kicker reveal">10 · Starter kit &amp; architecture</p>
+        <h2 class="title reveal">Un projet propre dès le départ</h2>
+        <div class="kit grow">
+          <div class="tree reveal">
+            <h4>DOSSIERS CLAIRS</h4>
+<pre><span class="f">speech-english/</span>
+├─ src/
+│  ├─ routes/      <span class="c">pages</span>
+│  ├─ components/  <span class="c">UI</span>
+│  ├─ lessons/     <span class="c">easy · basic · hard</span>
+│  └─ lib/         <span class="c">quiz, scores</span>
+├─ .env.example
+├─ eslint.config.js
+├─ package.json
+└─ README.md</pre>
+          </div>
+          <div class="kit-items">
+            <div class="card reveal"><div class="icon-badge bg-navy"><i data-icon="folder"></i></div><h4>Dossiers clairs</h4><p>Pages, composants et contenu des leçons séparés</p></div>
+            <div class="card reveal"><div class="icon-badge bg-teal"><i data-icon="sliders"></i></div><h4>Linter</h4><p>ESLint + Prettier pour un code homogène</p></div>
+            <div class="card reveal"><div class="icon-badge bg-gold"><i data-icon="key"></i></div><h4>.env.example</h4><p>Variables d'environnement documentées</p></div>
+            <div class="card reveal"><div class="icon-badge bg-red"><i data-icon="git"></i></div><h4>Git + README</h4><p>GitHub, installation et lancement expliqués</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 19 · Conclusion -->
+      <section class="slide dark" data-title="Conclusion">
+        <p class="kicker reveal" style="color:var(--gold)">Conclusion</p>
+        <h2 class="title reveal">Un parcours clair, du niveau Easy au Hard</h2>
+        <div class="concl grow">
+          <p class="body-lg reveal">Notre site propose un parcours clair du niveau Easy au Hard, avec du contenu engageant, des corrections immédiates et un suivi de progression. Que vous soyez débutant ou que vous souhaitiez perfectionner vos compétences, cette plateforme rend l'apprentissage de la grammaire efficace et agréable.</p>
+          <div class="stats">
+            <div class="stat reveal"><span class="num" data-count="3">0</span><span class="body">niveaux progressifs</span></div>
+            <div class="stat reveal"><span class="num" data-count="10">0</span><span class="body">notions de grammaire</span></div>
+            <div class="stat reveal"><span class="num" data-count="3">0</span><span class="body">outils : leçons, exercices, quiz</span></div>
+          </div>
+        </div>
+        <aside class="speaker-notes" hidden>
+          <p>En conclusion, notre site propose un parcours clair du niveau Easy au Hard, avec du contenu engageant, des corrections immédiates et un suivi de progression. Que vous soyez débutant ou que vous souhaitiez perfectionner vos compétences, cette plateforme rend l'apprentissage de la grammaire efficace et agréable.</p>
+        </aside>
+      </section>
+
+      <!-- 20 · Merci -->
+      <section class="slide dark" data-title="Merci">
+        <div class="bubbles">
+          <span style="width:420px;height:420px;left:-120px;top:-100px;background:var(--teal)"></span>
+          <span style="width:300px;height:300px;right:120px;top:80px;background:var(--gold)"></span>
+          <span style="width:520px;height:520px;right:-160px;bottom:-220px;background:var(--red)"></span>
+        </div>
+        <div class="thanks">
+          <div class="logo-se pop">SE</div>
+          <h2 class="title-xl reveal">Thank you!</h2>
+          <p class="subtitle reveal">Je vous remercie pour votre attention.</p>
+          <span class="qa reveal"><i data-icon="help"></i>Des questions ?</span>
+          <button class="restart reveal" data-goto="1">Revenir au début</button>
+        </div>
+        <aside class="speaker-notes" hidden><p>Je vous remercie pour votre attention.</p></aside>
+      </section>
+
+    </div>
+
+    <p class="rotate-hint">Astuce : tourne ton téléphone pour agrandir · glisse pour changer de diapositive</p>
+
+    <div class="overview" id="overview"><div class="overview-grid" id="overview-grid"></div></div>
+
+    <div class="notes-panel" id="notes-panel">
+      <h3 id="notes-title">NOTES DE L'ORATEUR</h3>
+      <div id="notes-body"></div>
+    </div>
+  </main>
+
+  <!-- ===== Barre du bas ===== -->
+  <footer class="bottombar">
+    <div class="progress"><span id="progress"></span></div>
+    <button class="nav-btn" id="prev" title="Précédente (←)"><i data-icon="chevron-left"></i></button>
+    <span class="counter" id="counter">1 / 20</span>
+    <button class="nav-btn" id="next" title="Suivante (→)"><i data-icon="chevron-right"></i></button>
+    <span class="current-title" id="current-title"></span>
+    <span class="keys-hint">← → naviguer · G sommaire · N notes · F plein écran</span>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

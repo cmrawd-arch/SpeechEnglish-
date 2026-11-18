@@ -1,0 +1,14 @@
+{
+  "name": "speech-english/speech-english",
+  "description": "Application web d'apprentissage de la grammaire anglaise",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}

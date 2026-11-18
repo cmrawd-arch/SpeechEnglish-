@@ -1,0 +1,23 @@
+# Fichiers d'environnement et secrets
+.env
+.env.local
+.env.*.local
+
+# Dépendances Composer
+/vendor/
+
+# Fichiers temporaires des systèmes d'exploitation
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.log
+
+# Dossiers et caches des éditeurs / IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Caches PHP
+*.cache

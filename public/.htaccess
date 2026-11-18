@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /SpeechEnglish/public/
+
+    # Si le fichier ou le dossier demandé existe réellement, le servir directement
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Sinon, rediriger toutes les requêtes vers le point d'entrée unique
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
