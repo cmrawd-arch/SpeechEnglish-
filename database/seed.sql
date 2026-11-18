@@ -511,11 +511,11 @@ INSERT INTO `utilisateurs` (`id`, `nom`, `prenom`, `email`, `mot_de_passe`, `dat
 -- -----------------------------------------------------------------------------
 -- 7. Historique initial des Tentatives
 -- -----------------------------------------------------------------------------
-INSERT INTO `tentatives_quiz` (`utilisateur_id`, `quiz_id`, `score_obtenu`, `score_max`, `pourcentage`, `date_tentative`) VALUES
-(1, 1, 3, 3, 100.00, DATE_SUB(NOW(), INTERVAL 2 DAY)),
-(1, 2, 2, 3, 66.67, DATE_SUB(NOW(), INTERVAL 1 DAY)),
-(2, 1, 2, 3, 66.67, DATE_SUB(NOW(), INTERVAL 3 HOUR)),
-(2, 4, 3, 3, 100.00, NOW());
+INSERT INTO `tentatives_quiz` (`utilisateur_id`, `quiz_id`, `score_obtenu`, `score_max`, `bonnes_reponses`, `mauvaises_reponses`, `pourcentage`, `date_tentative`) VALUES
+(1, 1, 3, 3, 3, 0, 100.00, DATE_SUB(NOW(), INTERVAL 2 DAY)),
+(1, 2, 2, 3, 2, 1, 66.67, DATE_SUB(NOW(), INTERVAL 1 DAY)),
+(2, 1, 2, 3, 2, 1, 66.67, DATE_SUB(NOW(), INTERVAL 3 HOUR)),
+(2, 4, 3, 3, 3, 0, 100.00, NOW());
 
 -- -----------------------------------------------------------------------------
 -- 8. Suivi de Progression par Leçon

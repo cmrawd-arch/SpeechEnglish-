@@ -220,6 +220,17 @@ class QuizController
         $scoreMax    = (int) $sessionQuiz['max_score'];
         $leconId     = (int) $sessionQuiz['lecon_id'];
 
+        // Calcul des statistiques détaillées (bonnes/mauvaises réponses)
+        $bonnes = 0;
+        $mauvaises = 0;
+        foreach ($sessionQuiz['answers'] as $ans) {
+            if ($ans['is_correct']) {
+                $bonnes++;
+            } else {
+                $mauvaises++;
+            }
+        }
+
         $pourcentage = $scoreMax > 0 ? round(($scoreObtenu / $scoreMax) * 100, 2) : 0.0;
 
         // 1. Enregistrement en base de données MySQL dans `tentatives_quiz`
@@ -228,6 +239,8 @@ class QuizController
             $quizId,
             $scoreObtenu,
             $scoreMax,
+            $bonnes,
+            $mauvaises,
             $pourcentage
         );
 
@@ -249,6 +262,33 @@ class QuizController
             'redirect_url' => url('/results/' . $attemptId),
         ]);
         exit;
+    }
+
+    /**
+     * Affiche l'historique complet des tentatives de l'utilisateur.
+     * Route : /results
+     */
+    public function history(): void
+    {
+        $userId = $_SESSION['user_id'] ?? null;
+        if (!$userId) {
+            setFlash('error', "Veuillez vous connecter pour consulter votre historique.");
+            redirect('/login');
+        }
+
+        $user = $this->userModel->findById((int) $userId);
+        if (!$user) {
+            session_destroy();
+            redirect('/login');
+        }
+
+        $dashboardModel = new \App\Models\DashboardModel();
+        $history = $dashboardModel->getQuizHistory((int) $userId, 50); // On récupère jusqu'à 50 résultats
+
+        renderView('results/index', [
+            'user'    => $user,
+            'history' => $history,
+        ]);
     }
 
     /**

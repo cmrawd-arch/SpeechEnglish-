@@ -177,14 +177,16 @@ class Quiz
      * @param int $quizId
      * @param int $scoreObtenu
      * @param int $scoreMax
+     * @param int $bonnes
+     * @param int $mauvaises
      * @param float $pourcentage
      * @return int Identifiant de la tentative créée
      */
-    public function saveAttempt(int $userId, int $quizId, int $scoreObtenu, int $scoreMax, float $pourcentage): int
+    public function saveAttempt(int $userId, int $quizId, int $scoreObtenu, int $scoreMax, int $bonnes, int $mauvaises, float $pourcentage): int
     {
         $sql = "
-            INSERT INTO tentatives_quiz (utilisateur_id, quiz_id, score_obtenu, score_max, pourcentage, date_tentative)
-            VALUES (:uid, :qid, :score, :smax, :pct, NOW())
+            INSERT INTO tentatives_quiz (utilisateur_id, quiz_id, score_obtenu, score_max, bonnes_reponses, mauvaises_reponses, pourcentage, date_tentative)
+            VALUES (:uid, :qid, :score, :smax, :bonnes, :mauvaises, :pct, NOW())
         ";
 
         $stmt = $this->db->prepare($sql);
@@ -193,6 +195,8 @@ class Quiz
             'qid'   => $quizId,
             'score' => $scoreObtenu,
             'smax'  => $scoreMax,
+            'bonnes' => $bonnes,
+            'mauvaises' => $mauvaises,
             'pct'   => $pourcentage,
         ]);
 
@@ -213,6 +217,8 @@ class Quiz
                 t.id AS tentative_id,
                 t.score_obtenu,
                 t.score_max,
+                t.bonnes_reponses,
+                t.mauvaises_reponses,
                 t.pourcentage,
                 t.date_tentative,
                 q.id AS quiz_id,

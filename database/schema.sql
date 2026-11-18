@@ -131,6 +131,8 @@ CREATE TABLE `tentatives_quiz` (
     `quiz_id` INT UNSIGNED NOT NULL,
     `score_obtenu` INT UNSIGNED NOT NULL,
     `score_max` INT UNSIGNED NOT NULL,
+    `bonnes_reponses` INT UNSIGNED NOT NULL DEFAULT 0,
+    `mauvaises_reponses` INT UNSIGNED NOT NULL DEFAULT 0,
     `pourcentage` DECIMAL(5,2) NOT NULL COMMENT 'Score en pourcentage (ex: 80.00)',
     `date_tentative` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT `fk_tentatives_utilisateurs`

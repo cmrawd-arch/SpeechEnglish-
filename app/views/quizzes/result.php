@@ -75,6 +75,19 @@
                         <span class="circle-label"><?= $attempt['score_obtenu'] ?> / <?= $attempt['score_max'] ?> point(s)</span>
                     </div>
 
+                    <div class="result-stats-row">
+                        <div class="stat-item correct">
+                            <span class="stat-icon">✅</span>
+                            <span class="stat-value"><?= $attempt['bonnes_reponses'] ?></span>
+                            <span class="stat-label">Correctes</span>
+                        </div>
+                        <div class="stat-item incorrect">
+                            <span class="stat-icon">❌</span>
+                            <span class="stat-value"><?= $attempt['mauvaises_reponses'] ?></span>
+                            <span class="stat-label">Incorrectes</span>
+                        </div>
+                    </div>
+
                     <div class="result-feedback-message">
                         <?php if ($attempt['pourcentage'] == 100): ?>
                             <h3 class="feedback-heading success">Score parfait ! Félicitations !</h3>
@@ -109,13 +122,13 @@
                 <!-- Boutons d'action -->
                 <div class="result-actions-deck">
                     <a href="<?= url('/quiz/' . $attempt['quiz_id']) ?>" class="btn btn-outline">
-                        🔄 Recommencer le quiz
+                        🔄 Recommencer
                     </a>
-                    <a href="<?= url('/lessons/' . $attempt['lecon_id']) ?>" class="btn btn-secondary">
-                        📖 Revoir la leçon
+                    <a href="<?= url('/results') ?>" class="btn btn-secondary">
+                        📜 Mon historique
                     </a>
                     <a href="<?= url('/dashboard') ?>" class="btn btn-primary">
-                        📊 Mon tableau de bord &rarr;
+                        📊 Tableau de bord &rarr;
                     </a>
                 </div>
 

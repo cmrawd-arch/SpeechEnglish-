@@ -26,6 +26,9 @@
             <a href="<?= url('/lessons') ?>" class="nav-item">
                 <span class="nav-icon">📚</span> Leçons par niveau
             </a>
+            <a href="<?= url('/results') ?>" class="nav-item">
+                <span class="nav-icon">📜</span> Historique
+            </a>
             <a href="#quiz-section" class="nav-item">
                 <span class="nav-icon">✏️</span> Quiz
             </a>
@@ -283,9 +286,9 @@
                     <span class="pill teal">SUIVI ANALYTIQUE</span>
                     <h2 class="section-title">Historique de vos tentatives</h2>
                 </div>
-                <p class="section-desc">
-                    Toutes vos évaluations passées, extraites en direct depuis MySQL sans aucune donnée fictive.
-                </p>
+                <div>
+                    <a href="<?= url('/results') ?>" class="btn btn-outline btn-sm">Voir tout l'historique &rarr;</a>
+                </div>
             </div>
 
             <div class="history-card">

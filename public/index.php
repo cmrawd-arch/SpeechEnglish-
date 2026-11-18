@@ -100,6 +100,11 @@ if ($route === '/dashboard') {
     exit;
 }
 
+if ($route === '/results') {
+    $quizController->history();
+    exit;
+}
+
 if ($route === '/lessons') {
     $lessonController->index();
     exit;

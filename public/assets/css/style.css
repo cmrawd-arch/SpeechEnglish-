@@ -2225,6 +2225,30 @@ body.dashboard-body {
     margin: 0;
 }
 
+.result-stats-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    background: #ffffff;
+    border: 1px solid var(--cream-border);
+}
+
+.stat-item.correct { border-left: 4px solid #10b981; }
+.stat-item.incorrect { border-left: 4px solid #ef4444; }
+
+.stat-icon { font-size: 1.25rem; margin-bottom: 0.25rem; }
+.stat-value { font-size: 1.25rem; font-weight: 800; color: var(--navy); line-height: 1; }
+.stat-label { font-size: 0.75rem; color: var(--gray-600); text-transform: uppercase; font-weight: 700; margin-top: 2px; }
+
 .result-meta-footer {
     display: flex;
     justify-content: center;
