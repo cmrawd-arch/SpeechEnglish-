@@ -58,6 +58,13 @@ function redirect(string $path): void
  */
 function renderView(string $view, array $data = []): void
 {
+    // Sécurité : Empêcher la mise en cache des vues privées (pour la déconnexion)
+    if (!empty($_SESSION['user_id'])) {
+        header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+        header("Cache-Control: post-check=0, pre-check=0", false);
+        header("Pragma: no-cache");
+    }
+
     extract($data);
     $viewPath = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $view) . '.php';
 

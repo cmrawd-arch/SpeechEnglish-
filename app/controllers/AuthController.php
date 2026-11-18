@@ -184,7 +184,11 @@ class AuthController
         if (session_status() === PHP_SESSION_NONE && !headers_sent()) {
             session_start();
         }
+
+        // 1. Vider le tableau $_SESSION
         $_SESSION = [];
+
+        // 2. Supprimer le cookie de session côté navigateur
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
             setcookie(session_name(), '', time() - 42000,
@@ -192,7 +196,16 @@ class AuthController
                 $params["secure"], $params["httponly"]
             );
         }
+
+        // 3. Détruire la session côté serveur
         session_destroy();
+
+        // 4. Empêcher la mise en cache pour éviter le retour arrière du navigateur
+        header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+        header("Cache-Control: post-check=0, pre-check=0", false);
+        header("Pragma: no-cache");
+
+        setFlash('success', 'Vous avez été déconnecté avec succès.');
         redirect('/login');
     }
 }
